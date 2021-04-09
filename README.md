@@ -42,7 +42,7 @@ outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.sof
 
  ***График функции потерь:*** 
  
-<img src="./1_Слой/Графики/epoch_loss v1.svg">
+<img src="./1_Слой/Графики/epoch_loss.svg">
 
 ### Анализ результатов:
 
