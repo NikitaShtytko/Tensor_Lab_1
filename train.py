@@ -57,15 +57,15 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs) //размером 222х222х8
-  x = tf.keras.layers.MaxPool2D()(x) // размером 111x111x8 
-  x = tf.keras.layers.Conv2D(filters=12, kernel_size=4)(x) //размером 108х108х12
-  x = tf.keras.layers.MaxPool2D()(x) // размером 54x54x12
-  x = tf.keras.layers.Conv2D(filters=16, kernel_size=5)(x) //размером 50х50х16
-  x = tf.keras.layers.MaxPool2D()(x) // размером 25x25x16
-  x = tf.keras.layers.Conv2D(filters=24, kernel_size=6)(x) //размером 20х20х24
-  x = tf.keras.layers.MaxPool2D()(x) // размером 10x10x24  
-  x = tf.keras.layers.Flatten()(x) // размером 10x10x24 = 2400
+  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)
+  x = tf.keras.layers.MaxPool2D()(x)
+  x = tf.keras.layers.Conv2D(filters=12, kernel_size=4)(x)
+  x = tf.keras.layers.MaxPool2D()(x)
+  x = tf.keras.layers.Conv2D(filters=16, kernel_size=5)(x)
+  x = tf.keras.layers.MaxPool2D()(x)
+  x = tf.keras.layers.Conv2D(filters=20, kernel_size=6)(x)
+  x = tf.keras.layers.MaxPool2D()(x)
+  x = tf.keras.layers.Flatten()(x)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
